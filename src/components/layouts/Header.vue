@@ -32,13 +32,14 @@
         <div class="mobile-menu" :class="{show: openMenu}">
             <div  @click="openMenu =  false" class="placeholder"></div>
             <div class="menu">
-            <ul>
-                <li><a>HOme</a></li>
-                <li><a>HOme</a></li>
-                <li><a>HOme</a></li>
-                <li><a>HOme</a></li>
-                <li><a>HOme</a></li>
-            </ul>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Travel</a></li>
+                <li><a href="#">Eat</a></li>
+                <li><a href="#">Relax</a></li>
+                <li><a href="#">Videos</a></li>
+              </ul>
             </div>
         </div>
     </header>
