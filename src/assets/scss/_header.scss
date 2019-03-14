@@ -41,9 +41,10 @@
 
     .toggle {
       display: flex;
-      justify-self: flex-end;
+      justify-self: flex-start;
       font-size: 30px;
       color: $blue-text;
+      visibility: hidden;
     }
   }
 
@@ -62,57 +63,6 @@
   :hover {
     color: $blue-text;
   }
-  .mobile-menu {
-    position: fixed;
-    background-color: transparent;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    // display: none;
-    pointer-events: none;
-    transition: 0.3s linear;
-    &.show {
-      background-color: #0002;
-      //   display: block;
-      pointer-events: initial;
-
-      .menu {
-        display: flex;
-        width: 80%;
-        background-color: $background-menu;
-        justify-content: center;
-        padding-top: 64px;
-        color: white;
-        ul {
-          display: flex;
-          flex-direction: column;
-          li {
-            margin-bottom: 20px;
-          }:last-child {
-            margin: 0;
-          }
-        }
-        a {
-          color: white
-        }:focus {
-          color: #4276ac;
-        }
-      }
-    }
-
-    .menu {
-      transition:  width 0.3s linear;
-      height: 100%;
-      width: 0%;
-      float: right;
-    }
-    .placeholder {
-      width: 20%;
-      height: 100%;
-      float: left;
-    }
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -122,12 +72,13 @@
       display: none;
     }
     .header-right {
-      // justify-content: flex-start;
-
+      .toggle {
+        visibility: visible;
+      }
       ul {
         width: 100%;
-      }
-      .toggle {
+        display: flex;
+        justify-content: flex-end;
       }
       img {
         width: 35px;
