@@ -1,0 +1,18 @@
+#home {
+  width: 100%;
+  height: auto;
+  position: relative;
+  color: $grey-text;
+
+  h1 {
+    font-size: 100px;
+    margin: 0;
+  }
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
+  img {
+      width: 100%;
+  }
+}

@@ -5,23 +5,8 @@
         <b-col sm="6" cols="12">
           <div class="header-left">
             <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Travel</a>
-              </li>
-              <li>
-                <a href="#">Eat</a>
-              </li>
-              <li>
-                <a href="#">Relax</a>
-              </li>
-              <li>
-                <a href="#">Videos</a>
+              <li v-for="route in routes" :key="route.name">
+                <router-link :to="route.to">{{route.name}}</router-link>
               </li>
             </ul>
           </div>
@@ -32,24 +17,9 @@
               <i class="fa fa-bars"></i>
             </div>
             <ul>
-              <li>
-                <a href="#">
-                  <img :src="require('@/assets/images/icons/facebook.webp')" alt="facebook">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img :src="require('@/assets/images/icons/instagram.webp')" alt="instagram">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img :src="require('@/assets/images/icons/pinterest.webp')" alt="pintrest">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img :src="require('@/assets/images/icons/twister.webp')" alt="twister">
+              <li v-for="item in social_links" :key="item.alt">
+                <a :href="item.link" target="_blank">
+                  <img :src="item.icon" :alt="item.alt">
                 </a>
               </li>
             </ul>
@@ -64,12 +34,61 @@
 <script>
 import MobileMenu from './MobileMenu.vue'
 export default {
+  name: 'HeaderPage',
   components: {
     MobileMenu
   },
   data () {
     return {
-      openMenu: false
+      openMenu: false,
+      routes: [
+        {
+          name: 'Home',
+          to: '/'
+        },
+        {
+          name: 'About',
+          to: '/about'
+        },
+        {
+          name: 'Travel',
+          to: '/travel'
+        },
+        {
+          name: 'Eat',
+          to: '/eat'
+        },
+        {
+          name: 'Relax',
+          to: '/relax'
+        },
+        {
+          name: 'Videos',
+          to: '/videos'
+        }
+      ],
+      social_links: [
+        {
+          icon: require('@/assets/images/icons/facebook.webp'),
+          link: 'https://www.facebook.com/tqdungit',
+          alt: 'Facebook'
+        },
+        {
+          icon: require('@/assets/images/icons/instagram.webp'),
+          link: 'https://www.instagram.com/tqdungit',
+          alt: 'Instagram'
+        },
+        {
+          icon: require('@/assets/images/icons/pinterest.webp'),
+          // link: 'https://www.facebook.com/tqdungit',
+          alt: 'Pinterest'
+        },
+        {
+          icon: require('@/assets/images/icons/twister.webp'),
+          // link: 'https://www.facebook.com/tqdungit',
+          alt: 'Twister'
+        }
+      ]
     }
   },
   methods: {

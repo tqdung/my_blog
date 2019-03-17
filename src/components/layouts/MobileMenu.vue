@@ -3,23 +3,8 @@
     <div class="outside" @click="toggle"></div>
     <div class="menu">
       <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Home</a>
+        <li v-for="route in routes" :key="route.name">
+          <router-link :to="route.to">{{route.name}}</router-link>
         </li>
       </ul>
     </div>
@@ -30,8 +15,34 @@
 export default {
   props: ['openMenu'],
   data () {
-    console.log(this.openMenu)
-    return {}
+    return {
+      routes: [
+        {
+          name: 'Home',
+          to: '/'
+        },
+        {
+          name: 'About',
+          to: '/about'
+        },
+        {
+          name: 'Travel',
+          to: '/travel'
+        },
+        {
+          name: 'Eat',
+          to: '/eat'
+        },
+        {
+          name: 'Relax',
+          to: '/relax'
+        },
+        {
+          name: 'Videos',
+          to: '/videos'
+        }
+      ]
+    }
   },
   methods: {
     toggle () {
@@ -45,6 +56,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/common.scss";
 #mobile-menu {
+  z-index: $z-index-mobile-menu;
   pointer-events: none;
   //   display: none;
   //   &.show {
@@ -70,6 +82,7 @@ export default {
       font-size: 18px;
       font-weight: bold;
       line-height: 36px;
+      text-align: left;
     }
 
     a {
@@ -88,6 +101,7 @@ export default {
     position: fixed;
     background-color: transparent;
     transition: background-color 0.3s linear;
+    z-index: calc($z-index-mobile-menu - 1);
   }
   &.show {
     pointer-events: initial;
