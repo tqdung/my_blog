@@ -58,11 +58,13 @@ export default {
 #mobile-menu {
   z-index: $z-index-mobile-menu;
   pointer-events: none;
+  // position: fixed;
   //   display: none;
   //   &.show {
   //     display: block;
   //   }
   .menu {
+    position: fixed;
     top: 0;
     left: -80vw;
     width: 80vw;
@@ -105,6 +107,8 @@ export default {
   }
   &.show {
     pointer-events: initial;
+      top: 0;
+      position: fixed;
     .outside {
       background: #0003;
     }
