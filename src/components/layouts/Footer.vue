@@ -47,7 +47,8 @@ export default {
   data () {
     return {
       personal_info: {
-        avatar: 'https://via.placeholder.com/150x150',
+        // avatar: 'https://via.placeholder.com/150x150',
+        avatar: require('@/assets/images/avatar/avatar-1.jpg'),
         title: 'About me',
         descriptions: "I'm a web developer, love music and want to make new friends with all people"
       },
