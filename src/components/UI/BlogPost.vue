@@ -70,10 +70,12 @@ export default {
             border-bottom: 1px solid gray;
             p {
                 font-size: 18px;
-                white-space: nowrap;
+                max-width: 100%;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                max-width: 100%;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
             }
         }
 

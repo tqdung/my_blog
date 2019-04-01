@@ -10,19 +10,21 @@
     position: relative;
 
     .information {
-        display: flex;
-        justify-content: flex-start;
         padding: 15px 0;
 
         img {
+            display: block;
             width: 150px;
             height: 150px;
             object-fit: cover;
+            float: left;
         }
 
         &-content {
             text-align: left;
             padding-left: 15px;
+            float: right;
+            width: calc(100% - 150px);
         }
         h3 {
             font-size: 36px;
@@ -30,6 +32,11 @@
         p {
             font-size: 20px;
             line-height: 24px;
+        }
+        &:after {
+            display: block;
+            content: '';
+            clear: both;
         }
     }
     .form-subscribe {
